@@ -1,0 +1,67 @@
+project:
+  name: synthetic-manuscript-generator
+  seed: 42
+
+dataset:
+  images_per_script: 100
+
+  split:
+    train: 85
+    validation: 10
+    test: 5
+
+  image:
+    width: 1600
+    height: 900
+
+scripts:
+  devanagari:
+    text_file: texts/devanagari_md.md
+    font_dir: fonts/devanagari
+
+  modi:
+    text_file: texts/Modi_md.md
+    font_dir: fonts/modi
+
+  sharada:
+    text_file: texts/sharada_md.md
+    font_dir: fonts/sharada
+
+output:
+  directory: output
+
+annotation:
+  format: markdown
+  save_text: true
+  save_bounding_boxes: true
+
+manuscript:
+  background_types:
+    - palm_leaf
+    - aged_paper
+
+  folio:
+    min_text_lines: 7
+    max_text_lines: 11
+
+  text_variation:
+    min_font_size: 30
+    max_font_size: 44
+    line_spacing: 14
+
+  layout:
+    min_margin: 90
+    max_margin: 140
+
+  effects:
+    rotation: true
+    waviness: true
+    blur: true
+    ink_variation: true
+    fading: true
+    smudges: true
+    stains: true
+    folds: true
+    page_warp: true
+    bleeding: true
+    curling: true
